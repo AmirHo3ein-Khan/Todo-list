@@ -17,8 +17,8 @@
 <ul id="list-of-task"></ul>
 <input type="text" id="task-input" placeholder="Enter your task here...">
 <div class="button-box">
-<div class="add w-50 button-display" id="submit">Add</div>
-<div class="trash w-50 button-display" id="trash">Clear</div>
+    <div class="add w-50 button-display" id="submit">Add</div>
+    <div class="trash w-50 button-display" id="trash">Clear</div>
 </div>
 
 <script>
@@ -44,6 +44,7 @@
     }
 
 
+
     submitBottom.addEventListener("click", function () {
         const taskText = taskTextInput.value.trim();
         if (taskText) {
@@ -65,7 +66,7 @@
 
     // remove all tasks
     trashBottom.addEventListener("click", function () {
-        if (confirm("Are you sure you want to clear all tasks?")) {
+        if (confirm("Are you sure you want to clear all tasks?")) { // confirm for delete all task
             listOfTask.innerHTML = "";
         }
     });
