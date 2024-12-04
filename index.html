@@ -15,7 +15,7 @@
 </div>
 <h1 class="h1-color">Todo List</h1>
 <ul id="list-of-task"></ul>
-<input class="input-task" type="text" id="task-input" placeholder="Enter your task here...">
+<input type="text" id="task-input" placeholder="Enter your task here...">
 <div class="button-box">
 <div class="add w-50 button-display" id="submit">Add</div>
 <div class="trash w-50 button-display" id="trash">Clear</div>
@@ -37,9 +37,7 @@
         deleteButton.textContent = "Delete";
         deleteButton.addEventListener("click", function () {
             listOfTask.removeChild(liItem);
-            saveTasks();
         });
-
         liItem.appendChild(span);
         liItem.appendChild(deleteButton);
         return liItem;
@@ -52,7 +50,6 @@
             const liItem = createTaskItem(taskText);
             listOfTask.appendChild(liItem);
             taskTextInput.value = "";
-            saveTasks();
         } else {
             //if input will be empty
             alert("Please enter a task!");
