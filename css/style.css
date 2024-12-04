@@ -1,0 +1,115 @@
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: white;
+    color: black;
+    margin: 20px;
+    padding: 0;
+}
+.height{
+    height: 100%;
+}
+title{
+    color: blue;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #b0b0b0;
+    color: black;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.completed {
+    text-decoration: line-through;
+}
+
+button {
+    background-color: darkred;
+    color: white;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 10px 10px;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+#task-input {
+    background-color: #b0b0b0;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+    border-width: thin;
+}
+
+.add, .trash {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.add {
+    background-color: black;
+}
+.add:hover {
+    background-color: darkred;
+}
+
+.trash {
+    background-color: black;
+}
+.trash:hover {
+    background-color: darkred;
+}
+.butt-with-height{
+    width: 200px;
+    height: 200px;
+}
+
+.input-task {
+    background-color: Silver;
+}
+
+.h1-color {
+    color: #7d7d80;
+}
+
+.dark-mode {
+    background-color: #2f2e2e;
+    color: white;
+}
+
+.chang-mode-color-button{
+    background-color: black;
+}
+.button-box{
+    display: flex;
+    flex-direction: row;
+}

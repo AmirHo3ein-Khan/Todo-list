@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Todo List</title>
+</head>
+<body>
+
+<div class="w-100 height-80 d-flex justify-content-end align-items-center">
+    <button class="ms-4 chang-mode-color-button" onclick="darkMode()">mode</button>
+</div>
+<h1 class="h1-color">Todo List</h1>
+<ul id="list-of-task"></ul>
+<input class="input-task" type="text" id="task-input" placeholder="Enter your task here...">
+<div class="button-box">
+<div class="add w-50 button-display" id="submit">Add</div>
+<div class="trash w-50 button-display" id="trash">Clear</div>
+</div>
+
+<script>
+    const listOfTask = document.getElementById("list-of-task");
+    const taskTextInput = document.getElementById("task-input");
+    const submitBottom = document.getElementById("submit");
+    const trashBottom = document.getElementById("trash");
+
+    function createTaskItem(taskText) {
+        const liItem = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.textContent = taskText;
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", function () {
+            listOfTask.removeChild(liItem);
+            saveTasks();
+        });
+
+        liItem.appendChild(span);
+        liItem.appendChild(deleteButton);
+        return liItem;
+    }
+
+
+    submitBottom.addEventListener("click", function () {
+        const taskText = taskTextInput.value.trim();
+        if (taskText) {
+            const liItem = createTaskItem(taskText);
+            listOfTask.appendChild(liItem);
+            taskTextInput.value = "";
+            saveTasks();
+        } else {
+            //if input will be empty
+            alert("Please enter a task!");
+        }
+    });
+
+    // submit with enter keyword
+    taskTextInput.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            submitBottom.click();
+        }
+    });
+
+    // remove all tasks
+    trashBottom.addEventListener("click", function () {
+        if (confirm("Are you sure you want to clear all tasks?")) {
+            listOfTask.innerHTML = "";
+        }
+    });
+
+    // function for dark mode
+    function darkMode() {
+        let element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+
+</script>
+</body>
+</html>
